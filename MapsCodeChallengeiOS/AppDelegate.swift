@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         GMSServices.provideAPIKey(googleapiKey)
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = HomeViewController(nibName: String(describing: HomeViewController.self), bundle: nil)
+        window?.makeKeyAndVisible()
         return true
     }
 

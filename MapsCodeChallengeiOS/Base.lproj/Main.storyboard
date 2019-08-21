@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapsCodeChallengeiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="MapsCodeChallengeiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +50,7 @@
                                 <state key="normal" image="nav_user_img"/>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZ5-3M-A0i">
-                                <rect key="frame" x="0.0" y="896" width="414" height="0.0"/>
+                                <rect key="frame" x="0.0" y="796" width="414" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extreme Alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9W-p9-8NH">
                                         <rect key="frame" x="97" y="18" width="126" height="23"/>
@@ -96,7 +96,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Ofw-Nk-yci" secondAttribute="trailing" constant="15" id="Nek-mr-daG"/>
                                     <constraint firstItem="Bsw-au-cy8" firstAttribute="leading" secondItem="ADT-c9-Wx4" secondAttribute="trailing" constant="11" id="UD7-zn-2oA"/>
                                     <constraint firstItem="h9W-p9-8NH" firstAttribute="top" secondItem="dZ5-3M-A0i" secondAttribute="top" constant="18" id="fmx-gG-ex8"/>
-                                    <constraint firstAttribute="height" id="pFw-ac-VCo"/>
+                                    <constraint firstAttribute="height" constant="100" id="pFw-ac-VCo"/>
                                     <constraint firstItem="Ofw-Nk-yci" firstAttribute="top" secondItem="dZ5-3M-A0i" secondAttribute="top" constant="21" id="t67-SX-RTX"/>
                                     <constraint firstItem="ADT-c9-Wx4" firstAttribute="leading" secondItem="dZ5-3M-A0i" secondAttribute="leading" constant="14" id="u2P-jV-SHb"/>
                                     <constraint firstItem="ADT-c9-Wx4" firstAttribute="top" secondItem="dZ5-3M-A0i" secondAttribute="top" constant="8" id="xSw-MZ-nCu"/>

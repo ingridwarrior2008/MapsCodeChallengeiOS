@@ -8,4 +8,5 @@ target 'MapsCodeChallengeiOS' do
   # Pods for MapsCodeChallengeiOS
 	pod 'GoogleMaps'
 	pod 'GooglePlaces'
+  pod 'FloatingPanel'
 end

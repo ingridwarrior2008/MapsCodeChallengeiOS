@@ -7,26 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09058E45230D92B50001039A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09058E44230D92B50001039A /* HomeViewController.xib */; };
+		09058E48230D931F0001039A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09058E47230D931F0001039A /* HomeViewController.swift */; };
+		09058E4B230D93490001039A /* PlaceApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09058E4A230D93490001039A /* PlaceApiManager.swift */; };
+		09058E4F230D96340001039A /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09058E4D230D96340001039A /* CardDetailViewController.swift */; };
+		09058E50230D96340001039A /* CardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09058E4E230D96340001039A /* CardDetailViewController.xib */; };
 		09A77A6A230AF2860052D463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A77A69230AF2860052D463 /* AppDelegate.swift */; };
-		09A77A6C230AF2860052D463 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A77A6B230AF2860052D463 /* ViewController.swift */; };
 		09A77A6F230AF2860052D463 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09A77A6D230AF2860052D463 /* Main.storyboard */; };
 		09A77A71230AF2870052D463 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09A77A70230AF2870052D463 /* Assets.xcassets */; };
 		09A77A74230AF2870052D463 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09A77A72230AF2870052D463 /* LaunchScreen.storyboard */; };
 		09A77A7D230AFCCA0052D463 /* google_maps_style.json in Resources */ = {isa = PBXBuildFile; fileRef = 09A77A7C230AFCCA0052D463 /* google_maps_style.json */; };
-		09A77A7F230B0FE20052D463 /* PlaceApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A77A7E230B0FE20052D463 /* PlaceApiManager.swift */; };
 		CFF65343CFF7757ADD90A1F7 /* Pods_MapsCodeChallengeiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8228040A55BC2667F867EC55 /* Pods_MapsCodeChallengeiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09058E44230D92B50001039A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		09058E47230D931F0001039A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		09058E4A230D93490001039A /* PlaceApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceApiManager.swift; sourceTree = "<group>"; };
+		09058E4D230D96340001039A /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
+		09058E4E230D96340001039A /* CardDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardDetailViewController.xib; sourceTree = "<group>"; };
 		09A77A66230AF2850052D463 /* MapsCodeChallengeiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapsCodeChallengeiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A77A69230AF2860052D463 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		09A77A6B230AF2860052D463 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		09A77A6E230AF2860052D463 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09A77A70230AF2870052D463 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09A77A73230AF2870052D463 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09A77A75230AF2870052D463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09A77A7C230AFCCA0052D463 /* google_maps_style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = google_maps_style.json; sourceTree = "<group>"; };
-		09A77A7E230B0FE20052D463 /* PlaceApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceApiManager.swift; sourceTree = "<group>"; };
 		2E7C288BC948B2799846D0CD /* Pods-MapsCodeChallengeiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapsCodeChallengeiOS.debug.xcconfig"; path = "Target Support Files/Pods-MapsCodeChallengeiOS/Pods-MapsCodeChallengeiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		8228040A55BC2667F867EC55 /* Pods_MapsCodeChallengeiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapsCodeChallengeiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF18EEF1DCB05C11B89FFB61 /* Pods-MapsCodeChallengeiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapsCodeChallengeiOS.release.xcconfig"; path = "Target Support Files/Pods-MapsCodeChallengeiOS/Pods-MapsCodeChallengeiOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -44,6 +50,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09058E42230D929F0001039A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				09058E49230D93490001039A /* Manager */,
+				09058E43230D929F0001039A /* ViewControllers */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		09058E43230D929F0001039A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				09058E4C230D96160001039A /* Card */,
+				09058E46230D92BC0001039A /* Home */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		09058E46230D92BC0001039A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				09058E47230D931F0001039A /* HomeViewController.swift */,
+				09058E44230D92B50001039A /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		09058E49230D93490001039A /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				09058E4A230D93490001039A /* PlaceApiManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		09058E4C230D96160001039A /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				09058E4D230D96340001039A /* CardDetailViewController.swift */,
+				09058E4E230D96340001039A /* CardDetailViewController.xib */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
 		09A77A5D230AF2850052D463 = {
 			isa = PBXGroup;
 			children = (
@@ -65,9 +115,8 @@
 		09A77A68230AF2860052D463 /* MapsCodeChallengeiOS */ = {
 			isa = PBXGroup;
 			children = (
+				09058E42230D929F0001039A /* App */,
 				09A77A69230AF2860052D463 /* AppDelegate.swift */,
-				09A77A6B230AF2860052D463 /* ViewController.swift */,
-				09A77A7E230B0FE20052D463 /* PlaceApiManager.swift */,
 				09A77A6D230AF2860052D463 /* Main.storyboard */,
 				09A77A70230AF2870052D463 /* Assets.xcassets */,
 				09A77A72230AF2870052D463 /* LaunchScreen.storyboard */,
@@ -114,6 +163,7 @@
 				09A77A63230AF2850052D463 /* Frameworks */,
 				09A77A64230AF2850052D463 /* Resources */,
 				82DCE4042399029110C8A5EE /* [CP] Copy Pods Resources */,
+				5636FAFB240D0FFBE551D812 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,6 +214,8 @@
 			files = (
 				09A77A74230AF2870052D463 /* LaunchScreen.storyboard in Resources */,
 				09A77A71230AF2870052D463 /* Assets.xcassets in Resources */,
+				09058E45230D92B50001039A /* HomeViewController.xib in Resources */,
+				09058E50230D96340001039A /* CardDetailViewController.xib in Resources */,
 				09A77A6F230AF2860052D463 /* Main.storyboard in Resources */,
 				09A77A7D230AFCCA0052D463 /* google_maps_style.json in Resources */,
 			);
@@ -194,6 +246,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5636FAFB240D0FFBE551D812 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MapsCodeChallengeiOS/Pods-MapsCodeChallengeiOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MapsCodeChallengeiOS/Pods-MapsCodeChallengeiOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MapsCodeChallengeiOS/Pods-MapsCodeChallengeiOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		82DCE4042399029110C8A5EE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -218,9 +287,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09A77A6C230AF2860052D463 /* ViewController.swift in Sources */,
 				09A77A6A230AF2860052D463 /* AppDelegate.swift in Sources */,
-				09A77A7F230B0FE20052D463 /* PlaceApiManager.swift in Sources */,
+				09058E4F230D96340001039A /* CardDetailViewController.swift in Sources */,
+				09058E48230D931F0001039A /* HomeViewController.swift in Sources */,
+				09058E4B230D93490001039A /* PlaceApiManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

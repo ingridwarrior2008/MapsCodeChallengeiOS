@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MapsCodeChallengeiOS" customModuleProvider="target">
+            <connections>
+                <outlet property="leftNavButton" destination="1rn-gE-NPc" id="Pjt-23-4Mz"/>
+                <outlet property="mapView" destination="so2-xR-8WV" id="oDk-cg-O7l"/>
+                <outlet property="rightNavButton" destination="yFN-HJ-vTR" id="Xtc-a4-HYT"/>
+                <outlet property="view" destination="iN0-l3-epB" id="3Q4-Oy-3i8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="so2-xR-8WV" customClass="GMSMapView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPS-Iw-u08">
+                    <rect key="frame" x="112.5" y="44" width="189" height="62"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="61.999999999999943" id="ilR-gr-Shq"/>
+                        <constraint firstAttribute="width" constant="189" id="v4X-9O-kxe"/>
+                    </constraints>
+                    <state key="normal" image="nav_button_img"/>
+                    <connections>
+                        <action selector="didTapArroundMe:" destination="-1" eventType="touchUpInside" id="1i9-NC-Q55"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rn-gE-NPc">
+                    <rect key="frame" x="16" y="44" width="62" height="62"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="62" id="uLk-q0-HPn"/>
+                        <constraint firstAttribute="height" constant="62" id="wdq-mO-QaP"/>
+                    </constraints>
+                    <state key="normal" image="nav_user_img"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFN-HJ-vTR">
+                    <rect key="frame" x="336" y="44" width="62" height="62"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="62" id="3Ki-6k-Wnr"/>
+                        <constraint firstAttribute="height" constant="62" id="cPQ-3J-rml"/>
+                    </constraints>
+                    <state key="normal" image="nav_notification"/>
+                    <connections>
+                        <action selector="didTapNavigationRightButton:" destination="-1" eventType="touchUpInside" id="7ds-jQ-Mrp"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="so2-xR-8WV" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="34" id="F4h-J0-piV"/>
+                <constraint firstItem="1rn-gE-NPc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="HaY-XT-k7m"/>
+                <constraint firstItem="1rn-gE-NPc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="IrM-FL-jYR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="so2-xR-8WV" secondAttribute="top" constant="44" id="KLU-dD-J2k"/>
+                <constraint firstItem="UPS-Iw-u08" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Sa8-PZ-3oc"/>
+                <constraint firstItem="so2-xR-8WV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ail-kI-LtV"/>
+                <constraint firstItem="UPS-Iw-u08" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="bU3-2T-3u2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="so2-xR-8WV" secondAttribute="trailing" id="fqS-GI-9rQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yFN-HJ-vTR" secondAttribute="trailing" constant="16" id="nsb-wT-oPK"/>
+                <constraint firstItem="yFN-HJ-vTR" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="sUF-vh-1LC"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="nav_button_img" width="189" height="62"/>
+        <image name="nav_notification" width="62" height="62"/>
+        <image name="nav_user_img" width="62" height="62"/>
+    </resources>
+</document>

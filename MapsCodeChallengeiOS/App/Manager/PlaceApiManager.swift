@@ -16,7 +16,7 @@ class PlaceApiManager {
     struct Constants {
         static let googlePlaceAPIKey = "AIzaSyB1wguza1Yi5u17xzRIPbM1J8D2aIP4D7g"
         static let googleNearPlaceURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
-        static let radius = 30
+        static let radius = 70
     }
 
     func loadNearPlace(location: CLLocationCoordinate2D, completion: @escaping Completion) {

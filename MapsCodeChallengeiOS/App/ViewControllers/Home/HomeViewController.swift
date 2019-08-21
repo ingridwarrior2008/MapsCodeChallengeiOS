@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  MapsCodeChallengeiOS
 //
 //  Created by Cris on 8/19/19.
@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import FloatingPanel
 import os.log
 
 enum PlaceMarker: String {
@@ -22,7 +23,7 @@ enum PlaceMarker: String {
     }
 }
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     private struct Constants {
         static let googleMapStyleFile = "google_maps_style"
@@ -30,19 +31,39 @@ class ViewController: UIViewController {
         static let mapZoom: Float = 20
         static let markerInfoViewHeight: CGFloat = 128
         static let markerAnimationDuration: CGFloat = 0.5
+        
+        struct Navigation {
+            static let navLeftUserImageName = "nav_user_img"
+            static let navLeftShareImageName = "nav_share_img"
+            static let navRightNotificationImageName = "nav_notification"
+            static let navRightCloseImageName = "nav_close_img"
+        }
     }
     
     private let locationManager = CLLocationManager()
     private let placeManager = PlaceApiManager()
     
+    var cardDetailViewController: CardDetailViewController?
+    var floatingPanelController: FloatingPanelController?
+    
+    private var selectedMarker: GMSMarker?
+    private var previousMarkerImage: UIImageView?
+    private var isMarkerSelected: Bool = false {
+        didSet {
+            setupNavigationIcons()
+        }
+    }
+    
     @IBOutlet var mapView: GMSMapView!
-    @IBOutlet weak var markerInfoHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var leftNavButton: UIButton!
+    @IBOutlet weak var rightNavButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mapView.delegate = self
         setupMapStyle()
+        setupFloatingView()
         setupLocationManager()
     }
     
@@ -61,11 +82,20 @@ class ViewController: UIViewController {
         
         findNearPlaceArroundMe()
     }
+    
+    @IBAction func didTapNavigationRightButton(_ sender: Any) {
+        if isMarkerSelected {
+            isMarkerSelected = false
+            selectedMarker?.iconView = previousMarkerImage
+            selectedMarker = nil
+            floatingPanelController?.removePanelFromParent(animated: true)
+        }
+    }
 }
 
-extension ViewController {
+extension HomeViewController {
     
-    func setupMapStyle() {
+    fileprivate func setupMapStyle() {
         guard let styleURL = Bundle.main.url(forResource: Constants.googleMapStyleFile, withExtension: Constants.googleMapStyleExtension) else {
             os_log("Unable to find google map style file", log: OSLog.default, type: .debug)
             return
@@ -78,9 +108,28 @@ extension ViewController {
         }
     }
     
-    func setupLocationManager() {
+    fileprivate func setupLocationManager() {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+    }
+    
+    fileprivate func setupFloatingView() {
+        floatingPanelController = FloatingPanelController()
+        floatingPanelController?.delegate = self
+        floatingPanelController?.surfaceView.backgroundColor = .clear
+        
+        cardDetailViewController = CardDetailViewController(nibName: String(describing: CardDetailViewController.self), bundle: nil)
+        floatingPanelController?.set(contentViewController: cardDetailViewController)
+        
+        floatingPanelController?.surfaceView.cornerRadius = 6.0
+        floatingPanelController?.surfaceView.shadowHidden = false
+    }
+    
+    fileprivate func setupNavigationIcons() {
+        let leftImageName = isMarkerSelected ? Constants.Navigation.navLeftShareImageName : Constants.Navigation.navLeftUserImageName
+        let rightImageName = isMarkerSelected ? Constants.Navigation.navRightCloseImageName : Constants.Navigation.navRightNotificationImageName
+        leftNavButton.setImage(UIImage(named: leftImageName), for: .normal)
+        rightNavButton.setImage(UIImage(named: rightImageName), for: .normal)
     }
     
     func findNearPlaceArroundMe() {
@@ -119,7 +168,7 @@ extension ViewController {
 }
 
 
-extension ViewController: CLLocationManagerDelegate {
+extension HomeViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         guard status == .authorizedWhenInUse else { return }
@@ -138,13 +187,45 @@ extension ViewController: CLLocationManagerDelegate {
     }
 }
 
-extension ViewController: GMSMapViewDelegate {
+extension HomeViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        markerInfoHeightConstraint.constant = Constants.markerInfoViewHeight
         
-        UIView.animate(withDuration: TimeInterval(Constants.markerAnimationDuration), animations: {
-            self.view.layoutIfNeeded()
-        })
+        isMarkerSelected = true
+        selectedMarker = marker
+        previousMarkerImage = marker.iconView as? UIImageView
+        
+        marker.iconView = UIImageView(image: UIImage(named: "selected_marker_img"))
+        floatingPanelController?.addPanel(toParent: self, belowView: nil, animated: true)
         return true
+    }
+}
+
+extension HomeViewController: FloatingPanelControllerDelegate {
+    func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
+        return CustomFloatingPanelLayout()
+    }
+    
+    func floatingPanelDidEndDragging(_ vc: FloatingPanelController, withVelocity velocity: CGPoint, targetPosition: FloatingPanelPosition) {
+        if targetPosition == .full {
+            
+        }
+    }
+}
+
+class CustomFloatingPanelLayout: FloatingPanelLayout {
+    public var initialPosition: FloatingPanelPosition {
+        return .half
+    }
+    
+    public var supportedPositions: Set<FloatingPanelPosition> {
+        return [.full, .half]
+    }
+    
+    public func insetFor(position: FloatingPanelPosition) -> CGFloat? {
+        switch position {
+        case .full: return 150.0
+        case .half: return 200.0
+        default: return nil
+        }
     }
 }
